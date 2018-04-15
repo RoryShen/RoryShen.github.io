@@ -3,8 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[Android Device Monitor 启动报错]]></title>
+      <url>/posts/2018/af022983/</url>
+      <content type="html"><![CDATA[<p>&emsp;&emsp; Android studio升级到3.0.1之后，发现启动Android Device Monitors时，报错，怎么也无法启动，只能得到一个错误信息。<br><img src="error_message_gui.png" alt="错误提示"><br><br>&emsp;&emsp;打开log错误信息如下(贴了最前面的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">!SESSION 2018-04-15 18:07:22.993 -----------------------------------------------</div><div class="line">eclipse.buildId=unknown</div><div class="line">java.version=9.0.4</div><div class="line">java.vendor=Oracle Corporation</div><div class="line">BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US</div><div class="line">Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.735</div><div class="line">!MESSAGE Bundle reference:file:org.apache.ant_1.8.3.v201301120609/@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.747</div><div class="line">!MESSAGE Bundle reference:file:org.apache.jasper.glassfish_2.2.2.v201205150955.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.749</div><div class="line">!MESSAGE Bundle reference:file:org.apache.lucene.core_2.9.1.v201101211721.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.816</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.help.base_3.6.101.v201302041200.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.817</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.help.ui_3.5.201.v20130108-092756.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.818</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.help.webapp_3.6.101.v20130116-182509.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.821</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.jetty.server_8.1.3.v20120522.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.827</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.platform.doc.user_4.2.2.v20130121-200410.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.829</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.team.core_3.6.100.v20120524-0627.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.831</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.team.ui_3.6.201.v20130125-135424.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.833</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.ui.cheatsheets_3.4.200.v20120521-2344.jar@4 not found.</div><div class="line"></div><div class="line">!ENTRY org.eclipse.osgi 4 0 2018-04-15 18:07:23.837</div><div class="line">!MESSAGE Bundle reference:file:org.eclipse.ui.intro_3.4.200.v20120521-2344.jar@4 not found.</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;找了很久终于找到了解决方案，记录如下，把Android studio当前使用jre文件夹拷贝到monitor-x86-64目录下即可，再次启动就不报错了。<br><img src="jre_location.png" alt="Android stuido jdk 目录"><br><img src="jre_monitor64.png" alt=""><br>PS:在Android 3.1版本中，已经从界面上去掉了Android Device Monitor的接口，需要通过命令来启动”monitor”.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Test </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[从已有的pk8证书创建.keystore证书]]></title>
-      <url>/posts/2017/1506327584/</url>
+      <url>/posts/2017/8b655df3/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>本文是在Windows下的操作，需要安装Java和openssl，或者使用<a href="http://cmder.net/" target="_blank" rel="external">cmder</a>。<br>如果是在Linux下且<font color="red">pk8证书无密码</font>，可以直接使用<a href="https://github.com/getfatday/keytool-importkeypair" target="_blank" rel="external">keytool-importkeypair
 </a>进行一步转换。<br><a id="more"></a></p>
@@ -43,7 +65,7 @@
       
         <categories>
             
-            <category> Android </category>
+            <category> Dev </category>
             
         </categories>
         
@@ -58,7 +80,7 @@
     
     <entry>
       <title><![CDATA[连接KaiOS设备]]></title>
-      <url>/posts/2017/1505963719/</url>
+      <url>/posts/2017/6885425e/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>如果还没搭建好环境，请先搭建环境，使用真机时，跳过模拟器安装部分即可。</p>
 </blockquote>
@@ -88,7 +110,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -103,7 +125,7 @@
     
     <entry>
       <title><![CDATA[KaiOS自动化环境搭建]]></title>
-      <url>/posts/2017/1505825374/</url>
+      <url>/posts/2017/8de7830d/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>KaiOS自动化环境搭建记录，记录备查。</p>
 </blockquote>
@@ -153,7 +175,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -168,7 +190,7 @@
     
     <entry>
       <title><![CDATA[数据驱动在Uiautomator中的使用]]></title>
-      <url>/posts/2017/1504263418/</url>
+      <url>/posts/2017/eeb82703/</url>
       <content type="html"><![CDATA[<h1 id="Part-1-前言"><a href="#Part-1-前言" class="headerlink" title="Part 1: 前言"></a>Part 1: 前言</h1><p>&emsp;&emsp;本文的基础是Junit4的参数化，如果不了解请阅读或百度<a href="https://www.baidu.com/s?wd=Junit+4+%E5%8F%82%E6%95%B0%E5%8C%96&amp;ie=utf-8&amp;rsv_op=JV8ML2UfIadPaYb8P23XbMUJhTOc35bcZ680SQN4dYOUIMKL2SK86J6fRVheQ7P6UW3dRO0e9gIIJah65df8Q3hQONeZLIaW&amp;tn=90909841_hao_pg&amp;ch=&amp;rsv_su=4cI4IQXZ7ZQQ7LgTe8IQKafQf0dO5e9e0fg1O0S1II61c8V71WKTXIVSUa9dbf1XeRh0eKNIXL6hSeaf0TaeSQOfJTd0NeVZ" target="_blank" rel="external">Junit4参数化</a><br></p>
 <h1 id="Part-2：-理论依据"><a href="#Part-2：-理论依据" class="headerlink" title="Part 2： 理论依据"></a>Part 2： 理论依据</h1><p>&emsp;&emsp;数据驱动的设计思路是，把需要的数据放到excel表格中，然后由程序去读里面的数据，传入程序里进行测试。因此涉及到了两个方面：<br><br><a id="more"></a></p>
 <ul>
@@ -203,7 +225,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -220,7 +242,7 @@
     
     <entry>
       <title><![CDATA[基于世界咖啡的时间管理]]></title>
-      <url>/posts/2017/1503803703/</url>
+      <url>/posts/2017/98f089c5/</url>
       <content type="html"><![CDATA[<h1 id="Part-1-我们真的怕时间浪费么？"><a href="#Part-1-我们真的怕时间浪费么？" class="headerlink" title="Part 1 我们真的怕时间浪费么？"></a>Part 1 我们真的怕时间浪费么？</h1><h2 id="时间的消逝，是我们最期待的事情"><a href="#时间的消逝，是我们最期待的事情" class="headerlink" title="时间的消逝，是我们最期待的事情"></a>时间的消逝，是我们最期待的事情</h2><p>&emsp;&emsp;举例说明：比如我们会玩游戏来打发时间，在无聊的时候，总希望时间能够快一点过去。在快要下班的时候，总希望时间可以快点消逝，能够很快的到达下班时刻，特别是大型节假日，或者是周五快要下班的时候。<br><br>&emsp;&emsp;所以可以得出一个简单粗暴的结论：我们并不是那么的珍惜时间，我们痛苦的根源在于 <code>时间消逝之后，我们需要做的事情没有完成。</code> 因此我们会时常感叹，自己时间不够用，需要进行时间管理，所以这才是我们提出的需要对时间进行管理的出发点。那么该怎么要进行时间管理呢？我们需要做到以下几点：<br><a id="more"></a></p>
 <ul>
 <li>在时间结束之前完成改变</li>
@@ -291,7 +313,7 @@
       
         <categories>
             
-            <category> Manager </category>
+            <category> Manage </category>
             
         </categories>
         
@@ -306,7 +328,7 @@
     
     <entry>
       <title><![CDATA[参数化在UiAutomator中的使用]]></title>
-      <url>/posts/2017/1503753796/</url>
+      <url>/posts/2017/2799a829/</url>
       <content type="html"><![CDATA[<h1 id="Part-1：-背景"><a href="#Part-1：-背景" class="headerlink" title="Part 1： 背景"></a>Part 1： 背景</h1><p>自动化在部门内部推行了大半年时间，由于电话号码，邮件账户等信息希望能够实现从外部读取，并使用，避免使用同一组数据，也为了让脚本更加利于维护，因此部门内部提出了把测试数据分离的观点。</p>
 <a id="more"></a>
 <h1 id="Part-2：-思路"><a href="#Part-2：-思路" class="headerlink" title="Part 2： 思路"></a>Part 2： 思路</h1><p>&emsp;&emsp; 刚开始的时候，想的是把文本里的文件用IO流读进来，然后在进行分配，但问题就来了，读取数据简单，但怎么分配成了一个难题。后来通过查资料得知，Junti4已经实现了该功能，使用Parameters即可。<br></p>
@@ -328,7 +350,7 @@
       
         <categories>
             
-            <category> UiAutomator </category>
+            <category> Test </category>
             
         </categories>
         
@@ -343,7 +365,7 @@
     
     <entry>
       <title><![CDATA[Android git文件过滤设置]]></title>
-      <url>/posts/2017/1503060956/</url>
+      <url>/posts/2017/9e96eb51/</url>
       <content type="html"><![CDATA[<p>如下是记录关于Android项目，使用git管理时的gitinore文件过滤设置以及操作步骤</p>
 <ul>
 <li>新建一个空白的仓库</li>
@@ -391,7 +413,7 @@
     
     <entry>
       <title><![CDATA[为什么Junit的@Test方法必须是public的呢？]]></title>
-      <url>/posts/2017/1502811865/</url>
+      <url>/posts/2017/3bf7c79e/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;最近有部门内部再次推广自动化，有同学问我，为什么@Test方法需要必须是public void开头呢？我用其他方法可行不？<br>&emsp;&emsp;通过分析错误信息和源码发现，在junit测试里定义明确要求@Test方法必须是以public void开头。说明如下：<br><a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">The Test annotation tells JUnit that the public void method</div><div class="line">to which it is attached can be run as a test case. To run the method,</div><div class="line">JUnit first constructs a fresh instance of the class then invokes the</div><div class="line">annotated method. Any exceptions thrown by the test will be reported</div><div class="line">by JUnit as a failure. If no exceptions are thrown, the test is assumed</div><div class="line">to have succeeded.</div></pre></td></tr></table></figure>
 <p>&emsp;&emsp;原因是，Junit方法会对标注了@Test的创建实例，然后去执行它们，由于Java的安全机制，因此只有把测试方法设置为public的才能够被Junit框架访问，所以测试用例也就是以public开头的咯！<br><br>&emsp;&emsp;至于为什么返回值是Void，我的理解是，测试框架不好对返回值进行处理，就干脆要求为空了。<br><br>附：java 四种修饰符和作用范围：<br><img src="http://ww2.sinaimg.cn/large/6fcc8c71gy1fimntucsazj20zj0d00vi.jpg" alt="java访问控制"></p>
@@ -399,7 +421,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -414,7 +436,7 @@
     
     <entry>
       <title><![CDATA[九型人格-职场高效沟通]]></title>
-      <url>/posts/2017/1498889542/</url>
+      <url>/posts/2017/5d24c2f9/</url>
       <content type="html"><![CDATA[<p> 上周五去参加了智联的公开课，九型人格-职场高效沟通，会上老师讲了很多，关于人性格分析的内容。<br>&emsp;&emsp;通过学习九型人格，可以让自己在工作中更好的和同事沟通与交流。用老师的话来说，九型人格的作用就是用来交朋友。<br>&emsp;&emsp;有历史学家认为九型人格最早出现在西元10-11世纪的伊斯兰生米主义教派“苏菲教”的某些加哦团中，也有国外学者和科学家们指出，在古埃及便已经发现了九型人格的核心理论。<br>&emsp;&emsp;九型人格的英文Enneagram，来自两个希腊词ennea与gram。其中ennea代表数值9，gram代表图形，所以我们也可以把它叫做九柱图，九星图，九点图等。当然九型人格和我们熟悉的星座，生肖，五行并不相同，九型人格更多的是心理学的范畴。通过学习九型人格，我们可以看到人的本质，帮助我们跳出性格的框框，找到解决问题的方法。<br><a id="more"></a><br>&emsp;&emsp;著名心理学家佛洛伊德认为，人类性格分为“本我、自我、超我”九型人格也契合这个观点。通过学习九型人格，你可以更好的了解自己，掌握自己的性格地图。在九型人格里更多的是研究性格本我的学科。在九型人格中的人格是指心理学上的性格。<br><br>&emsp;&emsp;心理学上认为“性格”更多的是指本质或者本我层面，更多的是在表达一个人内在的核心动机、感受等，而形态是指面具，更多的是指后天的经历，环境或某些事件影响，而出现的言行、习惯，爱好等。即:性格，不易改变，形态，可以改变。<br><br>&emsp;&emsp;型态更多时候是指我们的言行、习惯、处事方式，而性格则决定了我们的动机、感受、气质。在九型人格的培训中，老师带领我着我们去挖掘型态背后的东西。<br><br>&emsp;&emsp;在培训过程中，老师提出，不要记性格的名字，而是要记住他们的代号。<br>&emsp;&emsp;9种性格他们分别是：</p>
 <ul>
 <li>1号：正义性；</li>
@@ -432,7 +454,7 @@
       
         <categories>
             
-            <category> Manager </category>
+            <category> Manage </category>
             
         </categories>
         
@@ -447,13 +469,13 @@
     
     <entry>
       <title><![CDATA[为了明天]]></title>
-      <url>/posts/2017/1496209000/</url>
+      <url>/posts/2017/61559a22/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;最近团队里有同学陆陆续续的离开了。每个人离开都有自己的理由，不评论好与坏，只想说说自己需要更加努力。才能有更好的明天。<a id="more"></a><br>&emsp;&emsp;应该给自己定一个“五年计划”，定下计划，然后围绕这个目标去努力。去实现这个定下的计划。在离开的同学里，有同学说，学不到东西，只是想说，学无止境，怎么会学不到东西。或许只是自己不愿意学习吧。学习永远不能依靠别人，学习需要自己努力、专研。有时候在想，我应该做点什么，计划点什么。为了明天。给自己定一个“五年计划”？让自己多学一些东西。让未来自己的选择面更宽广。更具有竞争力。<br><br>&emsp;&emsp;最近进入了迷茫阶段，在思考，在接下来的一段时间里，自己的路该怎么走，自己适合干什么，可以干什么？有时候在想，怎么样才能提高整个团队的战斗力，带领大家一起进步。一起走向更加美好的明天。加油吧。做好自己，学习新的技术。新的技能。为了明天。<br>&emsp;&emsp;不管怎么样，为了明天，大家都需要加油，需要不断的充实自己。每个人都选择了自己的路，相信大家都可以走的更好。更平稳。</p>
 ]]></content>
       
         <categories>
             
-            <category> Unclassified </category>
+            <category> Life </category>
             
         </categories>
         
@@ -468,7 +490,7 @@
     
     <entry>
       <title><![CDATA[如何创建搭建UiAutomator测试环境]]></title>
-      <url>/posts/2017/1492675563/</url>
+      <url>/posts/2017/6f5ea7d0/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文将简单介绍，UiAutomator2.0的环境搭建。<br><br>所需工具（环境)</p>
 <ul>
 <li>Java </li>
@@ -497,7 +519,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -512,7 +534,7 @@
     
     <entry>
       <title><![CDATA[图像对比在自动化中的使用。]]></title>
-      <url>/posts/2017/1489645686/</url>
+      <url>/posts/2017/88071993/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;在自动化过程中，有些地方是必须要用到图像进行对比的。比如拍照。拍一张照片，然后检查拍摄的照片和预览的照片是否一致。在手工测试时，非常的方便。但是程序该怎么做呢？<br>&emsp;&emsp;这时就需要进行图像相似度的对比。最简单的一个对比方法就是对比两张图片的像素，通过对比像素来看两张图片是否相似，但这种方法有个致命的弱点。准确度不高。如果两张照片的光线不一样。也会被认定为两张图片。不过此方法很简单。我先介绍此方法。在后续的文章里，在介绍照片对比的方法。<br>&emsp;&emsp;首先，我来说一下，最简单的图像对比的实现。大家都知道，图片是由一个一个的像素点构成。比如我们常见的手机分辨率1920*1080.则，手机屏幕上一共就有2073600个像素点。那么我们要进行图像对比时，最简单的一种方法就是，对比每个像素点是否一样。下面我们先看来这种简单的对比方法是怎么实现的。</p>
 <blockquote>
 <p>此方法精度较低，误差较大，不适合用来对比照片等，有光线变化的图片，比较适合用于对比两张截图。照片的对比，在另一篇文章中介绍，使用汉明距离进行图像对比。</p>
@@ -557,7 +579,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -574,7 +596,7 @@
     
     <entry>
       <title><![CDATA[在Uiautomator中使用Content Provider获取数据]]></title>
-      <url>/posts/2017/1489492938/</url>
+      <url>/posts/2017/5f8513a3/</url>
       <content type="html"><![CDATA[<p><font color="red">注：1.本文针对Uiautomator2.0<br><br>&emsp;&emsp;2.本文不对Content Provider进行介绍，如果您对Content Provider不了解，建议您先阅读相关的文章</font></p>
 <blockquote>
 <p><a href="https://developer.android.com/guide/topics/providers/content-provider-basics.html" target="_blank" rel="external">Content Provider Basics</a><br><br><a href="http://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="external">ConTent Provider 介绍</a><br></p>
@@ -619,7 +641,7 @@
       
         <categories>
             
-            <category> Testing </category>
+            <category> Test </category>
             
         </categories>
         
@@ -636,7 +658,7 @@
     
     <entry>
       <title><![CDATA[管理者在企业中的精准定位]]></title>
-      <url>/posts/2017/1488543298/</url>
+      <url>/posts/2017/f2ce0f44/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;今天参加了智联公开课，《从业务到管理-管理者在企业中的精准定位》，感觉收获还是蛮多，趁热打铁，把今天的分享内容整理一下<br><br>&emsp;&emsp;在课程刚开始的时候，王老师给我们分析了一下当前管理工作中存在的痛点。</p>
 <ul>
 <li>做事一把好手，管人麻烦不断</li>
@@ -658,7 +680,7 @@
       
         <categories>
             
-            <category> Manager </category>
+            <category> Manage </category>
             
         </categories>
         
@@ -673,13 +695,13 @@
     
     <entry>
       <title><![CDATA[二月]]></title>
-      <url>/posts/2017/1487596504/</url>
+      <url>/posts/2017/52178317/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;二月，正式一个忙碌的季节，各种事情堆积在一起，弄的有点费劲。最近手里接了一个项目，从来没接触过。一切都需要从头开始，从最简单的需求，功能学习，测试工具等等。感觉太具有挑战性。<br>&emsp;&emsp;突然一下这个项目，优先级就提高了，之前PM还说这个项目，不急，结果今天一开会，就两个月的测试周期，压力山大。希望不要出啥幺蛾子。从无到有，一个慢慢学习与累积的过程。虽然现在感觉头大，但过了这段时间，相信自己会有一个较大的提升。加油！！！<br><br>&emsp;&emsp;然后就是最近越来越懒了，不想锻炼，不想看书，不想学习。哎。贵在坚持。加油。新的一年，多读书，多跑步。坚持运动。多休息！</p>
 ]]></content>
       
         <categories>
             
-            <category> Unclassified </category>
+            <category> Life </category>
             
         </categories>
         
@@ -694,13 +716,13 @@
     
     <entry>
       <title><![CDATA[Hello,Word!]]></title>
-      <url>/posts/2017/1487255690/</url>
+      <url>/posts/2017/f3ba4e3a/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;年后突发奇想，想新建一个自己的博客。申请博客，又太复杂，就想着弄一个自己的博客。嘿嘿。终于弄好了。欧耶！！<br><br>&emsp;&emsp;啦啦啦。好嘞。开博了。后续来记录下自己的成长吧。加油！</p>
 ]]></content>
       
         <categories>
             
-            <category> Unclassified </category>
+            <category> Life </category>
             
         </categories>
         
