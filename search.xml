@@ -759,9 +759,9 @@
         
         <tags>
             
-            <tag> UiAutomator </tag>
-            
             <tag> ContentProvider </tag>
+            
+            <tag> UiAutomator </tag>
             
         </tags>
         
